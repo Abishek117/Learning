@@ -34,13 +34,13 @@ public class ClassTreeSet
 		//System.out.println(tree1.tailSet("fgth"));	  //prints elements in a treeset that are less than a given element.the specified element can be any,like it may or may not be in a treeset
 		//System.out.println(tree1.subSet("tyr","yeio")); //prints elements between those specified elements
 		//System.out.println(tree1.descendingSet());	  //prints set in descending order
-		//System.out.println(tree1.ceiling("tyr"));		  //prints the immediate next element in a treeset that which is greater than or equal to a given element.the specified element can be any,like it may or may not be in a treeset
-		//System.out.println(tree1.floor("tyr"));		  //prints the immediate next element in a treeset that which is less than or equal to a given element.the specified element can be any,like it may or may not be in a treeset
-		//System.out.println(tree1.higher("tyr"));		  //prints the immediate next element in a treeset that which is strictly greater than a given element.the specified element can be any,like it may or may not be in a treeset
-		//System.out.println(tree1.lower("tyr"));		  //prints the immediate next element in a treeset that which is strictly greater than a given element.the specified element can be any,like it may or may not be in a treeset
+		//System.out.println(tree1.ceiling("tyr"));		  //prints the immediate next element in a treeset which is greater than or equal to a given element.the specified element can be any,like it may or may not be in a treeset
+		//System.out.println(tree1.floor("tyr"));		  //prints the immediate next element in a treeset which is less than or equal to a given element.the specified element can be any,like it may or may not be in a treeset
+		//System.out.println(tree1.higher("tyr"));		  //prints the immediate next element in a treeset which is strictly greater than a given element.the specified element can be any,like it may or may not be in a treeset
+		//System.out.println(tree1.lower("tyr"));		  //prints the immediate next element in a treeset which is strictly greater than a given element.the specified element can be any,like it may or may not be in a treeset
 		//System.out.println(tree1.pollFirst());		  //retrieves and removes first element in a set
 		//System.out.println(tree1.pollLast());			  //retrieves and removes last element in a set
-
+		
 		System.out.println(tree1);
 		
 		/*

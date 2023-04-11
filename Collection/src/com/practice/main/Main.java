@@ -11,6 +11,7 @@ import com.practice.collections.ClassHashMap;
 import com.practice.collections.ClassHashSet;
 import com.practice.collections.ClassLinkedHashMap;
 import com.practice.collections.ClassLinkedList;
+import com.practice.collections.ClassTreeMap;
 import com.practice.collections.ClassTreeSet;
 import com.practice.comparators.SortById;
 import com.practice.comparators.SortByName;
@@ -40,7 +41,11 @@ public class Main
 		//c5.hashMap();
 		
 		ClassLinkedHashMap c6 = new ClassLinkedHashMap();
-		c6.linkedHashMap();
+		//c6.linkedHashMap();
+		
+		ClassTreeMap c7 = new ClassTreeMap();
+		c7.treeMap();
+		
 		/* //Calculating hashcode and it's index
 		System.out.println("Naveen".hashCode());
 		int index = ("Naveen".hashCode() & (16-1));
