@@ -9,6 +9,7 @@ import java.util.TreeSet;
 import com.practice.collections.ClassArrayList;
 import com.practice.collections.ClassHashMap;
 import com.practice.collections.ClassHashSet;
+import com.practice.collections.ClassLinkedHashMap;
 import com.practice.collections.ClassLinkedList;
 import com.practice.collections.ClassTreeSet;
 import com.practice.comparators.SortById;
@@ -36,8 +37,10 @@ public class Main
 		//c4.treeSet();
 		
 		ClassHashMap c5 = new ClassHashMap();
-		c5.hashMap();
-
+		//c5.hashMap();
+		
+		ClassLinkedHashMap c6 = new ClassLinkedHashMap();
+		c6.linkedHashMap();
 		/* //Calculating hashcode and it's index
 		System.out.println("Naveen".hashCode());
 		int index = ("Naveen".hashCode() & (16-1));
@@ -50,8 +53,8 @@ public class Main
 		stud.add(new Student(109,"Abi",78.00));
 		stud.add(new Student(105,"Hari",78.00));
 		
-		SortById compareId = new SortById();
-		Collections.sort(stud, compareId);
+			SortById compareId = new SortById();
+			Collections.sort(stud, compareId);
 		
 		//SortByName compareName = new SortByName();
 		//Collections.sort(stud, compareName);

@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Spliterator;
 import java.util.TreeSet;
 
 public class ClassHashSet
@@ -45,6 +46,7 @@ public class ClassHashSet
 		hs2.add("asd");
 		hs2.add("fgh");
 		hs2.add("erty");
+		
 		//hs2.add("abd");
 		//hs2.add("try");
 		
@@ -55,14 +57,6 @@ public class ClassHashSet
 		//System.out.println(hs2.retainAll(hs1));			//returns elements of hs1 which are present in hs2 and returns boolean  
 		
 		System.out.println(hs1);
-		
-
-		
-		
-		
-		
-		
-		
 
 		/* // Iterate using for loop
 		Integer[] num = hs.toArray(new Integer[hs.size()]);

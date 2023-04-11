@@ -19,7 +19,6 @@ public class ClassTreeSet
 		tree.add(9);
 		tree.add(1);
 		
-		
 		//System.out.println(tree);
 		
 		TreeSet<String> tree1 = new TreeSet<String>();
