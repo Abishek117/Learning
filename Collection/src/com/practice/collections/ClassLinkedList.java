@@ -19,19 +19,12 @@ public class ClassLinkedList
 		
 		//System.out.println(ll);
 		
-		//ll.remove(2);
-		//ll.remove("ccc");
-		
-		
-		/* Methods that are not in arrayList */
-		ll.addFirst("yyy");
-		ll.addLast("zzz");
-		System.out.println(ll.getFirst());
-		System.out.println(ll.getLast());
-	
-		System.out.println(ll);
+		/* Note : 
+		 Linked List uses methods of List,Queue and Deque
+		 */
 		
 		return ll;
+		
 		
 	}
 

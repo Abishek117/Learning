@@ -18,7 +18,7 @@ public class ClassHashMap
 	{
 		HashMap<Integer,String> hm = new HashMap<>();
 		hm.put(11,"Dsf");
-		hm.put(4,"ewr");
+		hm.put(4,"oiu");
 		hm.put(5,"err");
 		hm.put(1,"hfgd");
 		hm.put(9,"wefc");
@@ -28,14 +28,23 @@ public class ClassHashMap
 		
 		//hm.putIfAbsent(3,"tyu");
 		//System.out.println(hm.size());					//This method is used to return the number of key/value pairs available in the map
-		//System.out.println(hm.putIfAbsent(8, "tyu"));		//returns null if key is not present in the map and adds specified key-value to the map(just like put method,but put methods overrides the existing with new value if the key is present.this method just avoids and returns null if key is present).if key is in the map,then returns the existing value for that key	
+		//System.out.println(hm.putIfAbsent(4, "tyu"));		//returns null if key is not present in the map and adds specified key-value to the map(just like put method,but put methods overrides the existing with new value if the key is present.this method just avoids and returns null if key is present).if key is in the map,then returns the existing value for that key	
 		//System.out.println(hm.getOrDefault(8,"fg"));		//returns specified value if key is not present in the map.if key is in the map,then returns the value for that key
 		//System.out.println(hm.containsKey(9));			//This method is used to check whether a particular key is being mapped into the Map or not. It takes the key element as a parameter and returns True if that element is mapped in the map.
 		//System.out.println(hm.containsValue("khgw"));		//This method is used to check whether a particular value is being mapped into the Map or not. It takes the key element as a parameter and returns True if that element is mapped in the map.
 		//System.out.println(hm.get(11));					//This method is used to retrieve or fetch the value mapped by a particular key mentioned in the parameter. It returns NULL when the map contains no such mapping for the key.
 		//System.out.println(hm.hashCode());				//This method is used to generate a hashCode for the given map containing keys and values
 		//System.out.println(hm.isEmpty());					//returns true if map is empty if map is empty else returns false
+		//System.out.println(hm.remove(2));					//removes key-value pair with specified key.returns removed value
 		//hm.clear();										//This method is used to clear and remove all of the elements or mappings from a specified Map collection.
+		//hm.replace(2, "kgf"); 							//used to replace the value of the specified key only if the key is previously mapped with some value.There is absolutely no difference in put and replace when there is a current mapping for the wanted key.You can use either, based on what is more readable to you
+		//System.out.println(hm.replace(2,"kgf"));			//returns old value.specified value will replace old value in the map
+		//hm.replaceAll((k,v)->v+v); 						//replace all the values in map with newly computed value
+		//System.out.println(hm.compute(6, (k,v)->v.toUpperCase()));  				//computes a new value and associates it with the specified key in the hashmap.the specified key should be in map
+		//System.out.println(hm.computeIfPresent(20, (k,v)->v.concat("dfr")));		//computes a new value and associates it with the specified key if the key is already present in the hashmap.if the specified key is not present in the map,then returns null
+		//System.out.println(hm.computeIfAbsent(4, k->"uyt"));						//computes a new value and associates it with the specified key if the key is not associated with any value in the hashmap..feels same like putIfAbsent?..difference is if the key already exists, they return the same thing, but if the key is missing, computeIfAbsent returns the computed value, while putIfAbsent return null..
+		//System.out.println(hm.merge(10,"hjy",(v1,v2)->(v1+v2).concat("ghj")));	//merges a new key-value pair if the specified key is not present. if the specified key is present we can do any operations with those two values (value which is already in map for a specified key,and newly specified value) 
+		            
 		
 		//System.out.println(hm.keySet()); 					//returns set view of the keys in the map
 		//System.out.println(hm.values());					//returns collection view of the values in the map
@@ -59,8 +68,8 @@ public class ClassHashMap
 		hm1.put(2,"khg");
 		hm1.put(10,"vcx");
 		
-		//System.out.println(hm1.equals(hm));					//This method is used to check for equality between two maps. It verifies whether the elements of one map passed as a parameter is equal to the elements of this map or not
 		//hm.putAll(hm);										//This method is used to copy all of the mappings from the specified map to this map.
+		//System.out.println(hm1.equals(hm));					//This method is used to check for equality between two maps. It verifies whether the elements of one map passed as a parameter is equal to the elements of this map or not
 		//System.out.println(hm1);
 		
 		/* //Iterating over maps 
@@ -103,13 +112,7 @@ public class ClassHashMap
 		hm.keySet().forEach(k -> System.out.println(k));
 		hm.values().forEach(k -> System.out.println(k));
 		*/
-
-		//compute()
-		//computeIfAbsent()
-		//computeIfPresent()		
-		//merge
-		//replaceAll
-
+		
 		return hm;
 	}
 	

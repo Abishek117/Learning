@@ -6,11 +6,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.TreeSet;
 
+import com.practice.collections.ClassArrayDeque;
 import com.practice.collections.ClassArrayList;
 import com.practice.collections.ClassHashMap;
 import com.practice.collections.ClassHashSet;
 import com.practice.collections.ClassLinkedHashMap;
 import com.practice.collections.ClassLinkedList;
+import com.practice.collections.ClassPriorityQueue;
 import com.practice.collections.ClassTreeMap;
 import com.practice.collections.ClassTreeSet;
 import com.practice.comparators.SortById;
@@ -44,8 +46,13 @@ public class Main
 		//c6.linkedHashMap();
 		
 		ClassTreeMap c7 = new ClassTreeMap();
-		c7.treeMap();
+		//c7.treeMap();
 		
+		ClassPriorityQueue c8 = new ClassPriorityQueue();
+		//c8.priorityQueue();
+		
+		ClassArrayDeque c9 = new ClassArrayDeque();
+		c9.arrayDeque();
 		/* //Calculating hashcode and it's index
 		System.out.println("Naveen".hashCode());
 		int index = ("Naveen".hashCode() & (16-1));
