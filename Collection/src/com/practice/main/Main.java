@@ -40,7 +40,7 @@ public class Main
 		//c4.treeSet();
 		
 		ClassHashMap c5 = new ClassHashMap();
-		//c5.hashMap();
+		c5.hashMap();
 		
 		ClassLinkedHashMap c6 = new ClassLinkedHashMap();
 		//c6.linkedHashMap();
@@ -52,7 +52,7 @@ public class Main
 		//c8.priorityQueue();
 		
 		ClassArrayDeque c9 = new ClassArrayDeque();
-		c9.arrayDeque();
+		//c9.arrayDeque();
 		/* //Calculating hashcode and it's index
 		System.out.println("Naveen".hashCode());
 		int index = ("Naveen".hashCode() & (16-1));

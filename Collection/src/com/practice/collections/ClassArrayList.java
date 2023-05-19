@@ -3,6 +3,7 @@ package com.practice.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -21,6 +22,8 @@ public class ClassArrayList
 		arr.add("tg");
 		arr.add("tg");
 		arr.add(1,"ui");
+		
+		
 		
 		//System.out.println(arr.add("qw"));
 		//System.out.println(arr.size());				//returns size of the arrayList
