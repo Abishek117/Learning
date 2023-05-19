@@ -9,10 +9,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Component
 @Entity
 @Table(name = "Drivers")
-@Component
+
 public class Drivers
 {
 	@Id
@@ -24,7 +24,20 @@ public class Drivers
 	
 	@Column(name = "age")
 	private int age;
+	
 
+	public Drivers()
+	{
+		super();
+	}
+	
+	public Drivers(int driverId, String driverName, int age)
+	{
+		super();
+		this.driverId = driverId;
+		this.driverName = driverName;
+		this.age = age;
+	}
 	
 	public int getDriverId() {
 		return driverId;
@@ -50,18 +63,10 @@ public class Drivers
 		this.age = age;
 	}
 
-//	public Drivers(int driverId, String driverName, int age) {
-//		super();
-//		this.driverId = driverId;
-//		this.driverName = driverName;
-//		this.age = age;
-//	}
-
-	public Drivers() {
-		super();
-		System.out.println("Injected.");
+	@Override
+	public String toString() {
+		return "Drivers [driverId=" + driverId + ", driverName=" + driverName + ", age=" + age + "]";
 	}
 	
 	
-
 }
