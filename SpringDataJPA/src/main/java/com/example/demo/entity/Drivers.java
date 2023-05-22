@@ -1,9 +1,12 @@
 package com.example.demo.entity;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -23,20 +26,19 @@ public class Drivers
 	@Column(name = "age")
 	private int age;
 	
+	public Drivers(int driverId, String driverName, int age) {
+		super();
+		this.driverId = driverId;
+		this.driverName = driverName;
+		this.age = age;
+		
+	}
 
 	public Drivers()
 	{
 		super();
 	}
-	
-	public Drivers(int driverId, String driverName, int age)
-	{
-		super();
-		this.driverId = driverId;
-		this.driverName = driverName;
-		this.age = age;
-	}
-	
+
 	public int getDriverId() {
 		return driverId;
 	}
@@ -60,6 +62,7 @@ public class Drivers
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 
 	@Override
 	public String toString() {

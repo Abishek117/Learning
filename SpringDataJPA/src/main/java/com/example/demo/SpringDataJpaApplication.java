@@ -18,9 +18,9 @@ public class SpringDataJpaApplication {
 		DriverService ds = ctx.getBean(DriverService.class);
 
 		Drivers d = ctx.getBean(Drivers.class);
-		d.setDriverId(103);
-		d.setDriverName("Hari");
-		d.setAge(18);
+		d.setDriverId(105);
+		d.setDriverName("Chandru");
+		d.setAge(23);
 		
 		//ds.add(d);
 		//System.out.println(ds.getById(102));
@@ -34,20 +34,9 @@ public class SpringDataJpaApplication {
 //			System.out.println("one record added");
 //		}
 		
-		//System.out.println(ds.addEntity(d));
-		System.out.println(ds.updateAge(19, 103));
+		System.out.println(ds.addEntity(d));
+		//System.out.println(ds.updateAge(19, 103));
 		
 		
-		
-		
-		
-		
-		
-		
-		
-	}
-	
-	
-	
-	
+	}	
 }
