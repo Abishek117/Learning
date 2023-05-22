@@ -18,22 +18,25 @@ public class SpringDataJpaApplication {
 		DriverService ds = ctx.getBean(DriverService.class);
 
 		Drivers d = ctx.getBean(Drivers.class);
-		d.setDriverId(104);
-		d.setDriverName("kumar");
-		d.setAge(23);
+		d.setDriverId(103);
+		d.setDriverName("Hari");
+		d.setAge(18);
 		
-		System.out.println(ds.add(d));
-		//System.out.println(ds.getId(102));
+		//ds.add(d);
+		//System.out.println(ds.getById(102));
 		//System.out.println(ds.getDrivers());
-		//ds.delete(10432);
-		
+		//System.out.println(ds.deleteById(103));
+		//System.out.println(ds.getByName("manoj"));
 		
 //		Drivers added = ds.add(d);
-//		
 //		if(added != null && !added.equals(0))
 //		{
 //			System.out.println("one record added");
 //		}
+		
+		//System.out.println(ds.addEntity(d));
+		System.out.println(ds.updateAge(19, 103));
+		
 		
 		
 		

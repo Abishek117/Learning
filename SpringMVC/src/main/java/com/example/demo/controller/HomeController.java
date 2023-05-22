@@ -43,11 +43,7 @@ public class HomeController
 		return "profile.jsp";
 	}
 	
-	
-	
-	
-	
-	
+
 	//performing same task using @ModelAttribute
 	@RequestMapping("/student")
 	public String studDetails(@ModelAttribute("student") Student s)

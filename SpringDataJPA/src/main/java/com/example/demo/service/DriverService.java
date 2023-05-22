@@ -19,8 +19,6 @@ public class DriverService
 	@Autowired
 	Drivers drivers;
 	
-	@Autowired
-	DriverService ds;
 
 	@Autowired
 	public DriverService(DriverRepo repo) {
@@ -28,31 +26,51 @@ public class DriverService
 		this.repo = repo;
 	}
 	
-	public String add(Drivers entity)
+	public Drivers add(Drivers entity)
 	{
-		int d1 = entity.getDriverId();
-		
-		
+		return this.repo.save(entity);
 	}
 	
+	public String addEntity(Drivers entity)
+	{
+		ArrayList<Integer> arr = repo.getByDriverId();
+		if(arr.contains(entity.getDriverId()))
+		{
+			return "Id already exists!..";
+		}
+		else
+		{
+			repo.save(entity);
+			return "Entry added..";
+		}
+	}
+	
+
 	public List<Drivers> getDrivers()
 	{
 		return this.repo.findAll();
 	}
 	
-	public Optional<Drivers> getId(int id)
+	public Optional<Drivers> getById(int id)
 	{
 		return this.repo.findById(id);
 	}
 	
-	public void delete(int id)
+	public ArrayList<Drivers> getByName(String name)
 	{
-		repo.deleteById(10432);
+		return this.repo.findByDriverName(name);
 	}
 	
-	public ArrayList<Integer> getIds()
+	public String deleteById(int id)
 	{
-		
+		repo.deleteById(id);
+		return "Entry Deleted";
+	}
+	
+	public String updateAge(int age,int id)
+	{
+		repo.updateByAge(age,id);
+		return "Entry updated";
 	}
 	
 }
