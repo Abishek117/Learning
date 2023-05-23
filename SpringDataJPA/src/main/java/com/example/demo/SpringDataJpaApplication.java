@@ -18,9 +18,9 @@ public class SpringDataJpaApplication {
 		DriverService ds = ctx.getBean(DriverService.class);
 
 		Drivers d = ctx.getBean(Drivers.class);
-		d.setDriverId(105);
-		d.setDriverName("Chandru");
-		d.setAge(23);
+		d.setDriverId(106);
+		d.setDriverName("Poovu");
+		d.setAge(22);
 		
 		//ds.add(d);
 		//System.out.println(ds.getById(102));
