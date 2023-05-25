@@ -18,8 +18,8 @@ public class OnetoOneMappingApplication {
 		EmployeeService es = ctx.getBean(EmployeeService.class);
 		
 		Employee e = ctx.getBean(Employee.class);
-//		
-//		EmpDetails ed = ctx.getBean(EmpDetails.class);
+		
+		EmpDetails ed = ctx.getBean(EmpDetails.class);
 //	
 //		ed.setId(72112412);
 //		ed.setName("Kathiravan");
@@ -29,7 +29,10 @@ public class OnetoOneMappingApplication {
 //		e.setEmpName("Kathir");
 //		e.setAge(25);
 //		//e.setEmpDetails(ed);
-		es.addEntity(e);
+		
+//		es.addEntity(e);
+//		es.remove(106);
+		System.out.println(es.getAll(e));
 	
 	}
 

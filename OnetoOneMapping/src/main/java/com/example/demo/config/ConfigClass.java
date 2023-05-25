@@ -15,9 +15,9 @@ public class ConfigClass
 	public Employee employee()
 	{
 		Employee e = new Employee();
-		e.setEmpId(105);
-		e.setEmpName("Kathir");
-		e.setAge(22);
+		e.setEmpId(106);
+		e.setEmpName("Kanna");
+		e.setAge(26);
 		return e;	
 	}
 	
@@ -25,8 +25,8 @@ public class ConfigClass
 	public EmpDetails empDetails()
 	{
 		EmpDetails ed = new EmpDetails();
-		ed.setId(776578343);
-		ed.setName("Kathiravan");
+		ed.setId(897765783);
+		ed.setName("Kannabiran");
 		ed.setType("Aadhaar");
 		return ed;
 	}

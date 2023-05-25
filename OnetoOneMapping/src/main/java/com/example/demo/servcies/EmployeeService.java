@@ -1,5 +1,7 @@
 package com.example.demo.servcies;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -16,24 +18,34 @@ public class EmployeeService
 	EmployeeRepository repo;
 	
 	@Autowired
-	Employee emp;
+	EmpDetailsRepository repo1;
+	
+	//	@Autowired
+	//	Employee emp;
 	
 	@Autowired
 	EmpDetails empDetails;
 	
 	
-//	public EmployeeService(EmployeeRepository repo) {
-//		super();
-//		this.repo = repo;
-//	}
-	
-	@Autowired
 	public void addEntity(Employee emp)
 	{
 		emp.setEmpDetails(empDetails);
 		this.repo.save(emp);
 		System.out.println("Added");
 	}
+	
+	public void remove(int id)
+	{
+		this.repo.deleteById(id);
+		System.out.println("removed");
+	}
+	
+	public List<Employee> getAll(Employee employee)
+	{
+		return this.repo.findAll();
+	}
+	
+	
 
 	
 
