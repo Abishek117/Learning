@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "IDProofs")
 public class EmpDetails 
@@ -62,7 +61,7 @@ public class EmpDetails
 
 	@Override
 	public String toString() {
-		return " [id=" + id + ", name=" + name + ", type=" + type + "]";
+		return "id=" + id + ", name=" + name + ", type=" + type + "";
 	}
 	
 	
