@@ -80,8 +80,8 @@ public class Employee
 
 	@Override
 	public String toString() {
-		return "empId=" + empId + ", empName=" + empName + ", age=" + age + ", empDetails=" + empDetails
-				+ "";
+		return "empId=" + empId + ", empName=" + empName + ", age=" + age + ", [" + empDetails
+			+ "";
 	}
 
 	

@@ -1,6 +1,7 @@
 package com.example.demo.servcies;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,6 +44,11 @@ public class EmployeeService
 	public List<Employee> getAll(Employee employee)
 	{
 		return this.repo.findAll();
+	}
+	
+	public void getById(int id)
+	{
+		System.out.println(this.repo.findById(id));
 	}
 	
 	

@@ -61,7 +61,7 @@ public class EmpDetails
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", name=" + name + ", type=" + type + "";
+		return "id=" + id + ", name=" + name + ", type=" + type + "]";
 	}
 	
 	

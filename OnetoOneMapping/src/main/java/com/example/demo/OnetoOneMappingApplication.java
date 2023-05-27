@@ -28,12 +28,12 @@ public class OnetoOneMappingApplication {
 //		e.setEmpId(104);
 //		e.setEmpName("Kathir");
 //		e.setAge(25);
-//		//e.setEmpDetails(ed);
+//		e.setEmpDetails(ed);
 		
-		es.addEntity(e);
+//		es.addEntity(e);
 //		es.remove(106);
 		System.out.println(es.getAll(e));
-	
+//		es.getById(107);
 	}
 
 }
