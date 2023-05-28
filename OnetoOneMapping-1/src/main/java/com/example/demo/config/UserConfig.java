@@ -14,8 +14,8 @@ public class UserConfig
 	public User user()
 	{
 		User u = new User();
-		u.setUsername("SuriyaKrishnan");
-		u.setPassword("suriya17");
+		u.setUsername("Deva");
+		u.setPassword("deva17");
 		return u;
 	}
 	
@@ -23,9 +23,9 @@ public class UserConfig
 	public UserProfile userProfile()
 	{
 		UserProfile up = new UserProfile();
-		up.setUserId(102);
-		up.setName("Suriya");
-		up.setAge(20);
+		up.setUserId(103);
+		up.setName("Deva");
+		up.setAge(19);
 		return up;
 	}
 

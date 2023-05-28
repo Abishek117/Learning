@@ -17,10 +17,10 @@ public class OnetoOneMapping1Application {
 		
 		User u = ctx.getBean(User.class);
 		
-		//us.addEntity();
+		us.addEntity();
 		//us.getEntity();
 		//us.getByuserName("Nedumaaran");
-		us.remove("SuriyaKrishnan");
+		//us.remove("SuriyaKrishnan");
 	}
 
 }
