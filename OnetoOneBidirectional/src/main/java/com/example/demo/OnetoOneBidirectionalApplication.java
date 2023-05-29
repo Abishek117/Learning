@@ -15,7 +15,8 @@ public class OnetoOneBidirectionalApplication {
 		
 		CustomerService cs = ctx.getBean(CustomerService.class);
 		
-		cs.addEntity();
+		//cs.addEntity();
+		cs.remove();
 	}
 
 }

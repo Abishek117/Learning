@@ -24,9 +24,9 @@ public class CustomerProfile
 	@OneToOne(mappedBy = "custProfile",cascade=CascadeType.ALL)
 	private Customer customer;
 
-	public CustomerProfile() {
+	public CustomerProfile()
+	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public CustomerProfile(int id, String address, long secondNumber, Customer customer) {
@@ -74,7 +74,4 @@ public class CustomerProfile
 		return "CustomerProfile [id=" + id + ", address=" + address + ", secondNumber=" + secondNumber + ", customer="
 				+ customer + "]";
 	}
-	
-	
-
 }

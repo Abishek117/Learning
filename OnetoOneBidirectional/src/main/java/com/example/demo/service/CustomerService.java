@@ -31,6 +31,12 @@ public class CustomerService
 		System.out.println("Added");
 	}
 	
+	public void remove()
+	{
+		repo2.deleteById(1102);;
+		System.out.println("Removed");
+	}
+	
 	
 	
 
