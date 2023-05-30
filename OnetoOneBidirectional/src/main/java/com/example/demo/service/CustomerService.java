@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +35,25 @@ public class CustomerService
 	
 	public void remove()
 	{
-		repo1.deleteById(102);
+		repo2.deleteById(1102);
 		System.out.println("Removed");
+	}
+	
+	public List<CustomerProfile> findAll()
+	{
+		List<CustomerProfile> cp = repo2.findAll();
+		for(CustomerProfile custDetails : cp)
+		{
+			System.out.println("Profile ID : " + custDetails.getId());
+			System.out.println("Customer Address : " + custDetails.getAddress());
+			System.out.println("Secondary Number : " + custDetails.getSecondNumber());
+			Customer c = custDetails.getCustomer();
+			System.out.println("Customer ID : " + c.getCustomerId());
+			System.out.println("Customer Name : " + c.getCustomerName());
+			System.out.println("Primary Number : " + c.getPhoneNumber());			
+		}
+		return cp;
+		
 	}
 	
 	

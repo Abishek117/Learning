@@ -34,8 +34,8 @@ public class SpringDataJpaApplication {
 //			System.out.println("one record added");
 //		}
 		
-		System.out.println(ds.addEntity(d));
-		//System.out.println(ds.updateAge(19, 103));
+		//System.out.println(ds.addEntity(d));
+		System.out.println(ds.updateAge(19, 103));
 		
 		
 	}	

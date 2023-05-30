@@ -14,8 +14,8 @@ public class CustomerConfig
 	{
 		Customer c = new Customer();
 		c.setCustomerId(102);
-		c.setCustomerName("Manoj");
-		c.setPhoneNumber(987805674);
+		c.setCustomerName("Hari");
+		c.setPhoneNumber(887805674);
 		return c;
 	}
 	
@@ -25,7 +25,7 @@ public class CustomerConfig
 		CustomerProfile cp = new CustomerProfile();
 		cp.setId(1102);
 		cp.setAddress("ALPT");
-		cp.setSecondNumber(76543456);
+		cp.setSecondNumber(876833456);
 		return cp;
 	}
 }

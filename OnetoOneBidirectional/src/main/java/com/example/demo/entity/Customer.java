@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,6 +22,7 @@ public class Customer
 	@Column(name = "phone_number")
 	private long phoneNumber;
 	
+	//@OneToOne(mappedBy = "customer",cascade=CascadeType.ALL)
 	@OneToOne
 	@JoinColumn(name = "profile_id",referencedColumnName = "id")
 	private CustomerProfile custProfile;
