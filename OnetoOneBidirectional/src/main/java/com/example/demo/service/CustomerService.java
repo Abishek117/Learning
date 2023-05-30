@@ -50,7 +50,8 @@ public class CustomerService
 			Customer c = custDetails.getCustomer();
 			System.out.println("Customer ID : " + c.getCustomerId());
 			System.out.println("Customer Name : " + c.getCustomerName());
-			System.out.println("Primary Number : " + c.getPhoneNumber());			
+			System.out.println("Primary Number : " + c.getPhoneNumber());		
+			System.out.println("***************************");
 		}
 		return cp;
 		
