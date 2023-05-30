@@ -33,7 +33,7 @@ public class CustomerService
 	
 	public void remove()
 	{
-		repo2.deleteById(1102);;
+		repo1.deleteById(102);
 		System.out.println("Removed");
 	}
 	
