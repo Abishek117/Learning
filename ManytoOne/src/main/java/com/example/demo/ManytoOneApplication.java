@@ -7,18 +7,15 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.example.demo.services.ServiceClass;
 
 @SpringBootApplication
-public class OnetoManyApplication {
+public class ManytoOneApplication {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext ctx =  SpringApplication.run(OnetoManyApplication.class, args);
+	public static void main(String[] args) 
+	{
+		ConfigurableApplicationContext ctx = SpringApplication.run(ManytoOneApplication.class, args);
 		
 		ServiceClass sc = ctx.getBean(ServiceClass.class);
 		
 		sc.addEntity();
-		//System.out.println(sc.getByName());
-		//System.out.println(sc.getAll());
-		//sc.removeEntity();
-		
 	}
 
 }

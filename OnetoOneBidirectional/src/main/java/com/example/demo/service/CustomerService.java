@@ -39,11 +39,13 @@ public class CustomerService
 		System.out.println("Removed");
 	}
 	
+	
+	//accessing customer from customer profile
 	public List<CustomerProfile> findAll()
 	{
 		List<CustomerProfile> cp = repo2.findAll();
 		for(CustomerProfile custDetails : cp)
-		{
+		{                                                                                                                                                                                                                                                                                                                                                                                                      
 			System.out.println("Profile ID : " + custDetails.getId());
 			System.out.println("Customer Address : " + custDetails.getAddress());
 			System.out.println("Secondary Number : " + custDetails.getSecondNumber());
@@ -56,6 +58,28 @@ public class CustomerService
 		return cp;
 		
 	}
+	
+	//accessing customer profile from customer
+	public List<Customer> getAll()
+	{
+		List<Customer> c = repo1.findAll();
+		for(Customer customer : c)
+		{
+			System.out.println("Customer ID : " + customer.getCustomerId());
+			System.out.println("Customer Name : " + customer.getCustomerName());
+			System.out.println("Primary Number : " + customer.getPhoneNumber());
+			
+			CustomerProfile custDetails = customer.getCustProfile();
+			
+			System.out.println("Profile ID : " + custDetails.getId());
+			System.out.println("Customer Address : " + custDetails.getAddress());
+			System.out.println("Secondary Number : " + custDetails.getSecondNumber());
+			System.out.println("***************************");
+			
+		}
+		return c;
+	}
+	
 	
 	
 	

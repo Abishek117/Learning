@@ -17,7 +17,8 @@ public class OnetoOneBidirectionalApplication {
 		
 		//cs.addEntity();
 		//cs.remove();
-		cs.findAll();
+		//cs.findAll();
+		cs.getAll();
 	}
 
 }

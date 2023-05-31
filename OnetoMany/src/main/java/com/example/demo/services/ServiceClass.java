@@ -34,22 +34,27 @@ public class ServiceClass
 		System.out.println("Added");
 	}
 	
-	public List<Author> getById()
+	public Author/*List<Author>*/ getByName()
 	{
-		List<Author> a = repo1.findByName("Sudha Kongara");
+		/*List<Author>*/Author a = repo1.findByName("Sudha Kongara");
 		
-		for(Author author : a)
-		{
-			System.out.println("Name : " + author.getName());
-			List<Books> b = author.getBooks();
-			for(Books books : b)
-			{
-				System.out.println("Book Name : " + books.getBookName() + ".It's rating : " + books.getRating());
-			}
-			System.out.println("********");
-		}
+//		for(Author author : a)
+//		{
+//			System.out.println("Name : " + author.getName());
+//			List<Books> b = author.getBooks();
+//			for(Books books : b)
+//			{
+//				System.out.println("Book Name : " + books.getBookName() + ".It's rating : " + books.getRating());
+//			}
+//			System.out.println("********");
+//		}
 		return a;
 		
+	}
+	
+	public List<Author> getAll()
+	{
+		return repo1.findAll();
 	}
 	
 	public void removeEntity()
