@@ -15,7 +15,9 @@ public class ManytoOneApplication {
 		
 		ServiceClass sc = ctx.getBean(ServiceClass.class);
 		
-		sc.addEntity();
+		//sc.addEntity();
+		//sc.remove();
+		System.out.println(sc.getAll());
 	}
 
 }

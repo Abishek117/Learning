@@ -27,9 +27,9 @@ public class ConfigClass
 	public Students stud2()
 	{
 		Students s2 = new Students();
-		s2.setId(103);
-		s2.setName("Hari");
-		s2.setMarks(85.00);
+		s2.setId(102);
+		s2.setName("Sapthagiri");
+		s2.setMarks(82.00);
 		return s2;
 	}
 	
@@ -37,8 +37,8 @@ public class ConfigClass
 	public University univ()
 	{
 		University u = new University();
-		u.setId(1101);
-		u.setName("Anna University");
+		u.setId(1102);
+		u.setName("Annamalai University");
 		u.setLocation("Chennai");
 		return u;
 	}

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -27,7 +28,7 @@ public class Company
 	@Column(name = "branch")
 	private String branch;
 	
-	@OneToMany(mappedBy = "company",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "company",fetch = FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Employees> employees;
 
 	public Company() {
