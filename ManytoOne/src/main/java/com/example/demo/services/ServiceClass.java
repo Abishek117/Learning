@@ -37,7 +37,7 @@ public class ServiceClass
 	
 	public void remove()
 	{
-		repo1.deleteById(103);
+		repo2.deleteById(1102);
 		System.out.println("Deleted");
 	}
 	
