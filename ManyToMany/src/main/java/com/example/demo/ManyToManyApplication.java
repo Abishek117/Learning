@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.example.demo.entity.services.ServiceClass;
+import com.example.demo.services.ServiceClass;
 
 @SpringBootApplication
 public class ManyToManyApplication {
@@ -17,8 +17,10 @@ public class ManyToManyApplication {
 		
 		//sc.addEntity();
 		//System.out.println(sc.getAll());
-		System.out.println(sc.getById());
-		//sc.remove();
+		//System.out.println(sc.getById());
+		System.out.println(sc.getbyCourseId());
+		//sc.removeUsers();
+		
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.example.demo.entity.services;
+package com.example.demo.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -49,9 +49,15 @@ public class ServiceClass
 		return repo1.findById(102);
 	}
 	
-	public void remove()
+	public Optional<Courses> getbyCourseId()
 	{
-		/*
+		return repo2.findById(1003);
+	}
+	
+	
+	public void removeUsers()
+	{
+/*
   To delete an entry in a many-to-many relationship using Spring Data JPA, you can follow these steps:
 
    1. Retrieve the entity that you want to delete from the database using its ID or any other identifying attribute.
@@ -59,12 +65,12 @@ public class ServiceClass
    2. Remove the related entities from the association. In a many-to-many relationship, this involves removing the associated entities from the collection property representing the relationship.
 	
    3. Save the updated entity back to the database. Spring Data JPA will automatically handle the necessary updates to the join table
-		 */
+*/
 		Optional<Users> u = repo1.findById(103);
 		Users users = u.get();
 		users.getCourses().clear();
-		repo1.deleteById(103);
-		//repo1.save(users);
+		repo1.save(users);
+		//repo1.deleteById(103);
 	}
 
 }
