@@ -17,25 +17,46 @@ public class ConfigClass
 		a.setAge(32);
 		return a;
 	}
-	
+
+//	@Bean
+//	public Books kaidhi()
+//	{
+//		Books b1 = new Books(106,"Kaidhi",9.9);
+//		return b1;
+//	}
+//	
+//	@Bean
+//	public Books maanagaram()
+//	{
+//		Books b2 = new Books(107,"Maanagaram",9.7);
+//		return b2;
+//	}
+//
+//	@Bean
+//	public Books vikram()
+//	{
+//		Books b3 = new Books(108,"Vikram",9.8);
+//		return b3;
+//	}
+//	
 	@Bean
-	public Books kaidhi()
+	public Books master()
 	{
-		Books b1 = new Books(106,"Kaidhi",9.9);
-		return b1;
+		Books b3 = new Books(109,"master",9.5);
+		return b3;
 	}
 	
 	@Bean
-	public Books maanagaram()
+	public Books leo()
 	{
-		Books b2 = new Books(107,"Maanagaram",9.7);
-		return b2;
+		Books b3 = new Books(110,"Leo",9.5);
+		return b3;
 	}
 	
 	@Bean
-	public Books vikram()
+	public Books steelClaws()
 	{
-		Books b3 = new Books(108,"Vikram",9.8);
+		Books b3 = new Books(111,"SteelClaws",9.8);
 		return b3;
 	}
 	

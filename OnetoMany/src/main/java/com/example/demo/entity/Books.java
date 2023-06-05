@@ -1,10 +1,13 @@
 package com.example.demo.entity;
 
+import org.springframework.context.annotation.Configuration;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Configuration
 @Entity
 @Table(name = "Books")
 public class Books 

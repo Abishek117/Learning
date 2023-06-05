@@ -1,9 +1,14 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.example.demo.entity.Author;
+import com.example.demo.entity.Books;
 import com.example.demo.services.ServiceClass;
 
 @SpringBootApplication

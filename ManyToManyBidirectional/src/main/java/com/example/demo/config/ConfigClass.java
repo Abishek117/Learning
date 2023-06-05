@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.example.demo.entity.Artists;
 import com.example.demo.entity.Movies;
@@ -9,7 +10,7 @@ import com.example.demo.entity.Movies;
 @Configuration
 public class ConfigClass 
 {
-	
+	@Primary
 	@Bean
 	public Artists artist1()
 	{

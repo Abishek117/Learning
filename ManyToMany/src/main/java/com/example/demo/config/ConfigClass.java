@@ -44,35 +44,43 @@ public class ConfigClass
 	}
 	
 	
+//	@Bean
+//	public Courses course1()
+//	{
+//		Courses c = new Courses();
+//		c.setCourse_id(1001);
+//		c.setCourse_name("Java");
+//		c.setPrice(100.00);
+//		return c;
+//	}
+//	
+//	@Bean
+//	public Courses course2()
+//	{
+//		Courses c = new Courses();
+//		c.setCourse_id(1002);
+//		c.setCourse_name("Python");
+//		c.setPrice(200.00);
+//		return c;
+//	}
+//	
+//	@Bean
+//	public Courses course3()
+//	{
+//		Courses c = new Courses();
+//		c.setCourse_id(1004);
+//		c.setCourse_name("Data Structures");
+//		c.setPrice(300.00);
+//		return c;
+//	}
 	@Bean
 	public Courses course1()
 	{
 		Courses c = new Courses();
-		c.setCourse_id(1001);
-		c.setCourse_name("Java");
+		c.setCourse_id(1005);
+		c.setCourse_name("ML");
 		c.setPrice(100.00);
 		return c;
 	}
-	
-	@Bean
-	public Courses course2()
-	{
-		Courses c = new Courses();
-		c.setCourse_id(1002);
-		c.setCourse_name("Python");
-		c.setPrice(200.00);
-		return c;
-	}
-	
-	@Bean
-	public Courses course3()
-	{
-		Courses c = new Courses();
-		c.setCourse_id(1004);
-		c.setCourse_name("Data Structures");
-		c.setPrice(300.00);
-		return c;
-	}
-	
 
 }

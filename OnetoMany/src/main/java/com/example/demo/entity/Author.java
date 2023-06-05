@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Configuration;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+@Configuration
 @Entity
 @Table(name = "Author")
 public class Author 
@@ -22,7 +25,7 @@ public class Author
 	@Column(name = "age")
 	private int age;
 	
-	@OneToMany(targetEntity = Books.class,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "ref_id")
 	private List<Books> books;
 

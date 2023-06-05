@@ -13,6 +13,9 @@ import jakarta.transaction.Transactional;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, String> 
 {
+	
+	
+	
 	public Author findByName(String name);
 	
 	@Modifying

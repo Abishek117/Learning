@@ -17,7 +17,7 @@ import com.example.demo.repo.MovieRepository;
 public class ServiceClass
 {
 	@Autowired
-	List<Artists> artists;
+	Artists artists;
 	
 	@Autowired
 	List<Movies> movies;
@@ -33,7 +33,7 @@ public class ServiceClass
 		
 //		 for(Artists artist : artists)
 //		 {
-//			 for(Movies movie : a)
+//			 for(Movies movie : movies)
 //			 {
 //				repo2.save(movie);
 //			 }
@@ -41,6 +41,8 @@ public class ServiceClass
 //			 repo1.save(artist);
 //		 }
 //		 System.out.println("Added");
+		 
+		
 //		for(Movies movie: movies)
 //		{
 //			repo2.save(movie);
@@ -52,22 +54,30 @@ public class ServiceClass
 //			repo1.save(artist);			
 //		}
 		
-		//for(Artists artist : artists)
-		//{
-			for(Movies movie: movies)
-			{
-				List<Movies> m = new ArrayList<>();
-				m.add(repo2.save(movie));
-				//Movies m  = repo2.save(movie);
-				for(Artists artist : artists)
-				{
-					artist.setMovies(m);
-					repo1.save(artist);
-				}
-			}
-		//}
+		
+//		for(Movies movie: movies)
+//		{
+//			List<Movies> m = new ArrayList<>();
+//			m.add(repo2.save(movie));
+//			//Movies m  = repo2.save(movie);
+//			for(Artists artist : artists)
+//			{
+//				artist.setMovies(m);
+//				repo1.save(artist);
+//			}
+//		}
 		
 		
+//		for(Artists artist : artists)
+//		{
+			artists.setMovies(movies);
+			repo1.save(artists);
+			
+//		}
+		System.out.println("Added");
+		
+		
+		 
 	}
 	
 //	public void remove();

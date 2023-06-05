@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,19 @@ public class CustomerService
 	
 	public void addEntity()
 	{
+		ArrayList<Integer> arr1 = repo2.getProfileID(102);
+		ArrayList<Integer> arr2 = repo1.getCustomerID(102);
+		if(arr2.contains(cust.getCustomerId()) && arr1.contains(custProfile.getId()))
+		{
+			System.out.println("ID already exists...");
+		}
+		else
+		{
 		repo2.save(custProfile);
 		cust.setCustProfile(custProfile);
 		repo1.save(cust);
 		System.out.println("Added");
+		}
 	}
 	
 	public void remove()

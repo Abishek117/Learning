@@ -15,10 +15,10 @@ public class ManyToManyApplication {
 		
 		ServiceClass sc = ctx.getBean(ServiceClass.class);
 		
-		//sc.addEntity();
+		sc.addEntity();
 		//System.out.println(sc.getAll());
 		//System.out.println(sc.getById());
-		System.out.println(sc.getbyCourseId());
+		//System.out.println(sc.getbyCourseId());
 		//sc.removeUsers();
 		
 	}

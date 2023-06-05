@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +30,23 @@ public class ServiceClass
 	
 	public void addEntity()
 	{
+//		List<Books> arr1 = repo2.findAll();
+//		ArrayList<Integer> arr2 = new ArrayList<>();
+//		for(Books book : arr1)
+//		{
+//			arr2.add(book.getBookId());
+//		}
+//		ArrayList<Integer> arr3 = new ArrayList<>();
+//		for(Books book : b)
+//		{
+//			arr3.add(book.getBookId());
+//		}
+		
+		
+		
+		
+//		System.out.println(arr1);
+//		ArrayList<Integer> arr = repo2.getBookId();
 		a.setBooks(b);
 		repo1.save(a);
 		System.out.println("Added");
