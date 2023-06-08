@@ -3,14 +3,17 @@ package com.example.demo.repo;
 import java.util.List;
 import java.util.Map;
 
+import com.example.demo.entity.Drivers;
+
 public interface CrudRepository <T>
 {
-	public int add(T t);
-	public List<T> findAll();
-	public T findById(int id);
-	public int update(T t);
-	public int remove(int id);
-	public List<Map<String,Object>> getAllDrivers();
-	public List<String> getAllDriversName();
+	public int add(T t);     							//update()
+	public List<T> findAll();							//query()
+	public T findById(int id);							//queryForObject()	
+	public int update(T t);								//update()
+	public int remove(int id);							//update()
+	public List<Map<String,Object>> getAllDrivers();	//queryForList()
+	public List<String> getAllDriversName();			//queryForList()
+	public int insertAll(List<T> list);					//bacthUpdate()
 
 }

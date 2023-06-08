@@ -21,9 +21,9 @@ public class ConfigClass
 	public List<Drivers> drivers()
 	{
 		List<Drivers> list = new ArrayList<>();
-		Drivers d1 = new Drivers(104,"Chandru",23);
+		Drivers d1 = new Drivers(109,"abc",20);
 		list.add(d1);
-		Drivers d2 = new Drivers(105,"Kumar",24);
+		Drivers d2 = new Drivers(110,"xyz",18);
 		list.add(d2);
 		return list;
 	}

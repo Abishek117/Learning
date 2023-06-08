@@ -1,5 +1,7 @@
 package com.example.demo;
 
+
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -28,8 +30,8 @@ public class SpringJdbcApplication {
 		//System.out.println(ds.remove(d.getDriverId()));
 		//System.out.println(ds.getAllDrivers());
 		//System.out.println(ds.getAllDriversName());
-		//System.out.println(ds.insertAll(c.drivers()));
-		ds.get();
+		System.out.println(ds.insertAll(c.drivers()));
+		
 	}
 
 }

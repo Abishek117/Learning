@@ -1,12 +1,11 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -70,7 +69,8 @@ public class DriverService implements CrudRepository<Drivers>
 		return template.queryForList(sql,String.class);
 	}
 	
-	public int[] insertAll(List<Drivers> list)
+	@Override
+	public int insertAll(List<Drivers> list)
 	{
 		String sql = "insert into drivers(driver_id,driver_name,age) values(?,?,?)";
 		List<Object[]> l = new ArrayList<>();
@@ -80,16 +80,15 @@ public class DriverService implements CrudRepository<Drivers>
 			Object[] arr = {driver.getDriverId(),driver.getDriverName(),driver.getAge()};
 			l.add(arr);
 		}
-		return template.batchUpdate(sql, l);
+		
+		template.batchUpdate(sql, l);
+		
+		 int count  = 0;
+		 for(Object[] l2 : l)
+		 {
+			 count +=1;
+		 }
+		 return count;
 	}
-	public void get()
-	{
-		String sql = "insert into drivers(driver_id,driver_name,age) values(?,?,?)";
-		List<Object[]> batchArgs = Arrays.asList(
-			    new Object[]{111,"abc",55},
-			    new Object[]{222,"vfds",65}
-			);
-			int[] affectedRows = template.batchUpdate(sql, batchArgs);
-			System.out.println(affectedRows);
-	}
+
 }
