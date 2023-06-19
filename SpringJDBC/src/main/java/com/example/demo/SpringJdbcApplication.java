@@ -33,5 +33,4 @@ public class SpringJdbcApplication {
 		System.out.println(ds.insertAll(c.drivers()));
 		
 	}
-
 }

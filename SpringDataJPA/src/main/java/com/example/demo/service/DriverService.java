@@ -61,10 +61,10 @@ public class DriverService
 		return this.repo.findByDriverName(name);
 	}
 	
-	public String deleteById(int id)
+	public void deleteById(int id)
 	{
 		repo.deleteById(id);
-		return "Entry Deleted";
+		//return "Entry Deleted";
 	}
 	
 	public String updateAge(int age,int id)
