@@ -34,6 +34,7 @@ public class DriverService
 
 	public Optional<Drivers> findDriverById(int id) 
 	{
+		//return repo.findById(id).orElseThrow(()->new RuntimeException(id+"not found"));
 		return repo.findById(id);
 	}
 

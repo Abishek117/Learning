@@ -1,14 +1,13 @@
 package com.example.demo.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Drivers;
+import com.example.demo.handler.ResponseHandler;
 import com.example.demo.service.DriverService;
 
 @RestController
@@ -27,6 +27,9 @@ public class DriverController
 {
 	@Autowired
 	DriverService service;
+	
+	@Autowired
+	ResponseHandler handler;
 	
 	@GetMapping(path = "/drivers")
 	public List<Drivers> getDrivers()
@@ -66,27 +69,32 @@ public class DriverController
 	
 
 	@GetMapping(path = "/driverId/{id}")
-	@ResponseStatus(HttpStatus.PAYLOAD_TOO_LARGE)  					//we can set any HttpStatus
+	@ResponseStatus(HttpStatus.NOT_FOUND)  					//we can set any HttpStatus
 	public Optional<Drivers> findDriverById(@PathVariable("id") int id)
 	{
 		Optional<Drivers> driver = service.findDriverById(id);
 		return driver;
 	}
-	
-	
+
 	@GetMapping("/driverById/{id}")
 	public ResponseEntity<Optional<Drivers>> getDriverById(@PathVariable("id") int id) 
 	{
+		//return handler.responseHandler("Student with the requested id", HttpStatus.OK, service.findDriverById(id));
+	
+		
 		Optional<Drivers> driver = service.findDriverById(id);
+		
 	    if (driver == null)
 	    {
-	        
-	        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();	// Return 404 Not Found
-	    } 
-	    else 
-	    {
-	    	return ResponseEntity.ok(driver); 			// Return 200 OK with the user object
+	        return  ResponseEntity.notFound().build();				// Return 404 Not Found
 	    }
+	    else
+	    {
+	    	return ResponseEntity.accepted().body(driver);			// Return 200 OK with the user object
+	    }
+		
+		
+		
 	}
 	
 }	
