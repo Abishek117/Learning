@@ -28,9 +28,6 @@ public class DriverController
 	@Autowired
 	DriverService service;
 	
-	@Autowired
-	ResponseHandler handler;
-	
 	@GetMapping(path = "/drivers")
 	public List<Drivers> getDrivers()
 	{
@@ -44,57 +41,55 @@ public class DriverController
 	}
 	
 	@GetMapping(path = "/driver/{id}")
-	public Optional<Drivers> findDriver(@PathVariable("id") int id)
+	public Optional<Drivers> findDriverById(@PathVariable("id") int id)
 	{
 		return service.findDriverById(id);
 	}
 	
 	@DeleteMapping(path = "/delete/{id}")
-	public void deleteById(@PathVariable("id") int id)
+	public void deleteDriverById(@PathVariable("id") int id)
 	{
 		service.deleteDriver(id);
 	}
 	
 	@GetMapping("/age")
-	public Optional<Drivers> findByAge(@RequestParam("age") int age)
+	public Optional<Drivers> findDriverByAge(@RequestParam("age") int age)
 	{
 		return service.findByAge(age);
 	}
 	
 	@GetMapping(path = "/drivers/{id}")
-	public Optional<Drivers> findDriverIdandAge(@PathVariable("id") int id,@RequestParam("age") int age)
+	public Optional<Drivers> findDriverByIdandAge(@PathVariable("id") int id,@RequestParam("age") int age)
 	{
 		return service.findDriverByIdAndAge(id,age);
 	}
 	
-
 	@GetMapping(path = "/driverId/{id}")
 	@ResponseStatus(HttpStatus.NOT_FOUND)  					//we can set any HttpStatus
-	public Optional<Drivers> findDriverById(@PathVariable("id") int id)
+	public Optional<Drivers> getDriverById(@PathVariable("id") int id)
 	{
 		Optional<Drivers> driver = service.findDriverById(id);
 		return driver;
 	}
-
-	@GetMapping("/driverById/{id}")
-	public ResponseEntity<Optional<Drivers>> getDriverById(@PathVariable("id") int id) 
-	{
-		//return handler.responseHandler("Student with the requested id", HttpStatus.OK, service.findDriverById(id));
 	
-		
+	@GetMapping(path = "/getDriver/{id}")
+	public ResponseEntity<Object> getDriverInfoById(@PathVariable("id") int id)
+	{
+		return service.findDriver(id);
+	}
+	
+	@GetMapping("/driverById/{id}")
+	public ResponseEntity<Optional<Drivers>> fetchDriverById(@PathVariable("id") int id) 
+	{
 		Optional<Drivers> driver = service.findDriverById(id);
-		
-	    if (driver == null)
-	    {
-	        return  ResponseEntity.notFound().build();				// Return 404 Not Found
-	    }
-	    else
-	    {
-	    	return ResponseEntity.accepted().body(driver);			// Return 200 OK with the user object
-	    }
-		
-		
-		
+//	    if (driver == null)
+//	    {
+//	        return  ResponseEntity.notFound().build();				// Return 404 Not Found
+//	    }
+//	    else
+//	    {
+	    	return ResponseEntity.accepted().body(driver);			// Return 202 Accepted with the user object
+//	    }
 	}
 	
 }	

@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ResponseHandler 
 {
-	public ResponseEntity<Object> responseHandler(String message,HttpStatus status,Object res)
+	public ResponseEntity<Object> responseHandler(String header,HttpStatus status,Object res)
 	{
 		Map<String,Object> response = new HashMap<>();
-		response.put("message", message);
+		response.put("message", header);
 		response.put("status", status);
 		response.put("data", res);
 		return new ResponseEntity<>(response, status);
