@@ -25,7 +25,7 @@ public class ClassHashMap
 		hm.put(2,"khg");
 		hm.put(10,"err");
 				
-		//System.out.println(hm);
+		System.out.println(hm);
 		
 		//hm.putIfAbsent(3,"tyu");
 		//System.out.println(hm.size());					//This method is used to return the number of key/value pairs available in the map
