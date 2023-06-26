@@ -24,6 +24,8 @@ import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.handler.ResponseHandler;
 import com.example.demo.service.DriverService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping(path = "/api/v1")
 public class DriverController 
@@ -38,7 +40,7 @@ public class DriverController
 	}
 	
 	@PostMapping(path = "/add")
-	public Drivers addDriver(@RequestBody Drivers driver)
+	public Drivers addDriver(@Valid @RequestBody Drivers driver)
 	{
 		return service.addDriver(driver);
 	}
@@ -104,7 +106,7 @@ public class DriverController
 	}
 	
 	//If driver with the given id found, returns custom response by Response entity else returns reponse by ExceptionHandler
-	@GetMapping(path = "/fetchById/{id}")
+	@GetMapping(path = "/getById/{id}")
 	public ResponseEntity<Object> getById(@PathVariable("id") int id)
 	{
 		ResponseEntity<Object> d = service.getDriver(id);

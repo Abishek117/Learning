@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 
 @Component
 @Entity
@@ -17,6 +19,7 @@ public class Drivers
 	private int driverId;
 	
 	@Column(name = "driver_name")
+	@Size(min = 2,message = "Name should have atleast 2 characters")
 	private String driverName;
 	
 	@Column(name = "age")
