@@ -17,23 +17,24 @@ import com.example.demo.exception.ErrorResponse;
 import com.example.demo.exception.UserNotFoundException;
 
 @RestControllerAdvice
-public class ExceptionHandling extends ResponseEntityExceptionHandler
+public class ExceptionHandling// extends ResponseEntityExceptionHandler
 {
 	@Autowired
 	ErrorResponse err;
 	
 	@ExceptionHandler(UserNotFoundException.class)
-	public ErrorResponse handleException(UserNotFoundException ex)
+	public ResponseEntity<ErrorResponse> handleException(UserNotFoundException ex)
 	{
 		ErrorResponse er = new ErrorResponse();
 		er.setErrorMessage(ex.getMessage());
 		er.setStatus(HttpStatus.NOT_FOUND);
 		er.setTimeStamp(LocalDateTime.now());
-		return er;
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(er);
 	}
 	
-
+/*
 	@Override
+	@ExceptionHandler(UserNotFoundException.class)
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) 
 	{
@@ -42,7 +43,7 @@ public class ExceptionHandling extends ResponseEntityExceptionHandler
 		er.setStatus(HttpStatus.NOT_FOUND);
 		er.setTimeStamp(LocalDateTime.now());
 		return ResponseEntity.badRequest().body(er);
-	}
+	}*/
 	
 	
 	
