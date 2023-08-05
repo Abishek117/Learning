@@ -38,21 +38,21 @@ public class ClassArrayList
 		//Collections.sort(arr,Collections.reverseOrder());		//sorts arraylist in reverse order
 		//Collections.shuffle(arr);								//shuffles arraylist and returns it in random order
 		
-		//System.out.println(arr);
+		System.out.println(arr);
 		
 		
 		
 		ArrayList<String> arr1 = new ArrayList<String>();
 		arr1.add("bc");
 		arr1.add("aaa");
-		
+		System.out.println(arr1);
 		//arr1.removeAll(arr);							//removes elements on arr1 which are all present in arr
 		//arr1.addAll(arr); 							//adds all element of arr1 to arr 
-		//arr1.retainAll(arr);							//returns elements in arr1 which are similar to elements in arr 
-		//System.out.println(arr.containsAll(arr1));		//returns true if elements of arr1 presents in arr,else false
+		arr1.retainAll(arr);							//returns elements in arr1 which are similar to elements in arr 
+		//System.out.println(arr.containsAll(arr1));	//returns true if elements of arr1 presents in arr,else false
 		//System.out.println(arr.hashCode());			//returns hashcode for the arraylist
 		
-		//System.out.println(arr1);
+		System.out.println(arr1);
 		
 		//ArrayList<String> arr2 = (ArrayList)arr1.clone();
 		//System.out.println(arr2);

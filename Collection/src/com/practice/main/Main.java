@@ -27,7 +27,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		ClassArrayList c1 = new ClassArrayList();
-		//c1.arrayList();
+		c1.arrayList();
 		//cl.studList();
 		
 		ClassLinkedList c2 = new ClassLinkedList();
