@@ -1,4 +1,4 @@
-package com.example.demo.exception;
+package com.example.demo.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.FieldError;
 
 @Component
 public class ErrorResponse 
@@ -50,9 +51,12 @@ public class ErrorResponse
 		this.status = status;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "ErrorResponse [errorMessage=" + errorMessage + ", timeStamp=" + timeStamp + ", status=" + status + "]";
 	}
+
+	
 	
 }

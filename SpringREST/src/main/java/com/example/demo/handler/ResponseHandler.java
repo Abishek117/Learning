@@ -25,4 +25,15 @@ public class ResponseHandler
 		return new ResponseEntity<>(response, status);
 	}
 	
+	public ResponseEntity<Object> addDriver(String message,HttpStatus status,Object res)
+	{
+		Map<String,Object> response = new HashMap<>();
+		response.put("message", message);
+		response.put("status", status);
+		response.put("data", res);
+		return new ResponseEntity<>(response, status);
+	}
+	
+	
+	
 }

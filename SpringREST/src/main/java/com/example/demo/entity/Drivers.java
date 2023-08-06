@@ -6,8 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 @Component
 @Entity
@@ -16,6 +15,7 @@ public class Drivers
 {
 	@Id
 	@Column(name = "driver_id")
+	@Positive(message = "Id shoud be greater than Zero")
 	private int driverId;
 	
 	@Column(name = "driver_name")
@@ -23,6 +23,7 @@ public class Drivers
 	private String driverName;
 	
 	@Column(name = "age")
+	@Positive(message="Age should be greater than Zero")
 	private int age;
 	
 	public Drivers() 
