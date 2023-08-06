@@ -45,7 +45,7 @@ public class ExceptionHandling// extends ResponseEntityExceptionHandler
 //	                .findFirst().orElse("Validation Failed");
 		Map<String, String> errorMap = new HashMap<>();
         for (FieldError fieldError : bindingResult.getFieldErrors()) {
-            errorMap.put(fieldError.getField() , fieldError.getDefaultMessage());
+            errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
 		err.setErrorMessage(errorMap.toString());
 		err.setStatus(HttpStatus.BAD_REQUEST);
