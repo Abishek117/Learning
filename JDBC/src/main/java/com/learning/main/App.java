@@ -35,7 +35,8 @@ public class App
 		   result-set data, which is typically held on the database server or in memory buffers managed by the database driver.
 		   When you call the toString() method on the ResultSet object, it returns a string that includes the class name (com.mysql.cj.jdbc.result.ResultSetImpl)
 		   and a unique identifier (@2f465398), which is typically the memory address or some other identifier for the object.
-		   To access the actual data stored in the ResultSet, you need to use the appropriate methods provided by the JDBC API. These methods, such as getInt(), getString(), or others depending on the data types, retrieve the data from the underlying result set as you navigate through the rows using methods like next().
+		   To access the actual data stored in the ResultSet, you need to use the appropriate methods provided by the JDBC API. These methods, such as getInt(), 
+		   getString(), or others depending on the data types, retrieve the data from the underlying result set as you navigate through the rows using methods like next().
 		 */
 		
 	
@@ -44,7 +45,6 @@ public class App
 			String id = rs.getString("StudentId");
 			String dob = rs.getString("dob");
 			System.out.println(id +" "+ dob);
-			
 		}
 		
     }

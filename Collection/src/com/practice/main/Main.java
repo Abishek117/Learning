@@ -27,7 +27,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		ClassArrayList c1 = new ClassArrayList();
-		c1.arrayList();
+		//c1.arrayList();
 		//cl.studList();
 		
 		ClassLinkedList c2 = new ClassLinkedList();
@@ -40,7 +40,7 @@ public class Main
 		//c4.treeSet();
 		
 		ClassHashMap c5 = new ClassHashMap();
-		c5.hashMap();
+		//c5.hashMap();
 		
 		ClassLinkedHashMap c6 = new ClassLinkedHashMap();
 		//c6.linkedHashMap();
@@ -77,7 +77,9 @@ public class Main
 		*/
 	
 		
-		//SuperB sb = new SuperB(4);
+		//SuperB sb = new SuperB();
+		SuperA sa = new SuperB(8);
+		System.out.println(sa.a);
 				
 		
 	}
