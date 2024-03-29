@@ -23,11 +23,22 @@ public class App
         String user = rb.getString("user");
         String pass = rb.getString("pass");
 		
-		Class.forName("com.mysql.jdbc.Driver");
+        /*The forName() method is a part of the Java Reflection API, 
+         * and it is used to dynamically load and obtain a reference to a class at runtime.
+         * This method is particularly useful when you don't know the name of the class you want to work with until your code is running.
+         */
+		//Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager.getConnection(url,user,pass);
-		PreparedStatement pst = conn.prepareStatement("Select * from student where name = ?");
-		pst.setString(1, "manoj");
-		ResultSet rs = pst.executeQuery();
+		PreparedStatement pst = conn.prepareStatement("update courses set price=500 where course_id in (?)");
+		pst.setInt(1, 1003);
+		//pst.setInt(2, 1004);
+		//ResultSet rs = pst.executeQuery();
+		int count = pst.executeUpdate();
+		boolean b = pst.execute();
+		
+		System.out.println(b);
+		
 		//System.out.println(rs.toString());
 		/*
 		   When the ResultSet object is created, it just holds a 'reference' to the actual result set data obtained from the database. 
@@ -40,12 +51,12 @@ public class App
 		 */
 		
 	
-		while(rs.next())
-		{
-			String id = rs.getString("StudentId");
-			String dob = rs.getString("dob");
-			System.out.println(id +" "+ dob);
-		}
+//		while(rs.next())
+//		{
+//			int id = rs.getInt("course_id");
+//			String name = rs.getString("course_name");
+//			System.out.println(id +" "+ name);
+//		}
 		
     }
     

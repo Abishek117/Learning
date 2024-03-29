@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 
 
-public class ClassArrayList
+public class ClassArrayList implements Comparable
 {
 	
 	public ArrayList<String> arrayList()
@@ -112,6 +112,12 @@ public class ClassArrayList
 		*/
 		
 		return arr;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

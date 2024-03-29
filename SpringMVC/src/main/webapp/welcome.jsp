@@ -7,7 +7,7 @@
 <title>Welcome Page</title>
 </head>
 <body>
-**************Welcome ${StudentName} {addStudent}***********************
+**************Welcome ${StudentName}***********************
 <form action = "details">
 Enter name : <input type = "text" name = "name"><br>
 <input type="submit" value="Get it">

@@ -1,4 +1,4 @@
-package com.practice.collections;
+	package com.practice.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,8 +24,11 @@ public class ClassHashMap
 		hm.put(9,"wefc");
 		hm.put(2,"khg");
 		hm.put(10,"err");
-				
-		System.out.println(hm);
+		
+		
+		String s = hm.get(12);
+		System.out.println(s);
+		//System.out.println(hm);
 		
 		//hm.putIfAbsent(3,"tyu");
 		//System.out.println(hm.size());					//This method is used to return the number of key/value pairs available in the map
@@ -45,17 +48,17 @@ public class ClassHashMap
 		//System.out.println(hm.computeIfPresent(20, (k,v)->v.concat("dfr")));		//computes a new value and associates it with the specified key if the key is already present in the hashmap.if the specified key is not present in the map,then returns null
 		//System.out.println(hm.computeIfAbsent(6, k->"uyt"));						//computes a new value and associates it with the specified key if the key is not associated with any value in the hashmap..feels same like putIfAbsent?..difference is if the key already exists, they return the same thing, but if the key is missing, computeIfAbsent returns the computed value, while putIfAbsent return null..
 		//System.out.println(hm.merge(10,"hjy",(v1,v2)->(v2)));	//merges a new key-value pair if the specified key is not present. if the specified key is present we can do any operations with those two values (value which is already in map for a specified key,and newly specified value) 
-		            
+		        
 		
 		//System.out.println(hm.keySet()); 					//returns set view of the keys in the map
 		//System.out.println(hm.values());					//returns collection view of the values in the map
-		//System.out.println(hm.entrySet());				//returns set view of map
+		//System.out.println(hm.entrySet());				//returns set view of map.Each element of the set is a Map.Entry object, representing a key-value pair
 		Set hs1 = new HashSet<>(hm.keySet());				//converting map keys into set (can convert map values into any collection)
 		List l1 = new ArrayList<>(hm.keySet());
 		Set hs2 = new HashSet<>(hm.values());				//converting map values into set (can convert map values into any collection)
 		List l2 = new ArrayList<>(hm.values());
-		Set hs3 = new HashSet<>(hm.entrySet());				//converting map into set (can convert map values into any collection)
-		List l3 = new ArrayList<>(hm.entrySet());
+		Set hs3 = new HashSet<>(hm.entrySet());				//converting map into set
+		List l3 = new ArrayList<>(hm.entrySet());			//converting map into list
 		//System.out.println(l3);
 		
 		//System.out.println(hm);
@@ -68,6 +71,7 @@ public class ClassHashMap
 		hm1.put(9,"rew");
 		hm1.put(2,"khg");
 		hm1.put(10,"vcx");
+		
 		
 		//hm.putAll(hm);										//This method is used to copy all of the mappings from the specified map to this map.
 		//System.out.println(hm1.equals(hm));					//This method is used to check for equality between two maps. It verifies whether the elements of one map passed as a parameter is equal to the elements of this map or not
@@ -113,8 +117,41 @@ public class ClassHashMap
 		//hm.keySet().forEach(k -> System.out.println(k));
 		//hm.values().forEach(k -> System.out.println(k));
 		*/
+	/*************************************************/
+		/* 
+		 * "Map.entry"
+		 * 
+		 * - In Java, the Map.Entry interface represents a key-value pair within a Map
+		 * provides methods to access and manipulate the key and value associated with an entry.
+		 * - The Map.Entry interface has been available since Java 1.2.
+		 */ 
+//		for(Map.Entry<Integer, String> m : hm.entrySet())
+//		{
+//			//m.setValue("hj");                           			//setting value or modifying value 
+//			//System.out.println(m.getKey() + " " + m.getValue());  //getting key and value
+//			for(Map.Entry<Integer, String> m1 : hm1.entrySet()) {
+//				System.out.println(m.equals(m1));					//compare key-value pairs.here checking whether key-value of the m is equal to the key-value pair of the m1
+//			}
+//		}
+		return hm1;
 		
-		return hm;
+		
+		  
+		 /* "entrySet()"
+		 * 
+		 * - entrySet() method is a part of the Map interface, and it returns a Set view of
+		 * the key-value pairs contained in the map.Each element in the set is a Map.Entry object representing a 
+		 * - The primary goal of the entrySet() method in Java's Map interface is to provide a convenient way to
+		 * access and iterate over the key-value pairs (entries) contained within a map. It returns a Set view of the
+		 * entries, where each element in the set is a Map.Entry object representing a single key-value pair.
+		 * This method provides a convenient way to iterate over the entries of a map and perform various operations on them.
+		 * - If needed, you can convert the set of entries to other collections
+		 * using entrySet() is a common and convenient way to iterate over the key-value pairs of a Map,
+		 * - You can also use other methods provided by the Map interface, such as keySet()(iteration for keys) and values()(iteration on values)
+		 */
+		
+		
+		
 	}
 	
 

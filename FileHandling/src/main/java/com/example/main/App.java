@@ -14,7 +14,7 @@ public class App
     	   //InputStreamReader isr = new InputStreamReader(System.in); 
 	       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	       String s  = br.readLine();
-    	   //int i = br.read(); 														// when you use inputstreamreader's read(),it will read a single character as an integer and return its Unicode value
+    	   //int i = br.read();													// when you use inputstreamreader's read(),it will read a single character as an integer and return its Unicode value
     	   System.out.println(s.toString());
     	   OutputStreamWriter osw = new OutputStreamWriter(System.out);
 //	       osw.write(s);
