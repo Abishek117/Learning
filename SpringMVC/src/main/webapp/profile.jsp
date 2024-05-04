@@ -1,4 +1,4 @@
-<%@page import="com.example.demo.entity.Student"%>
+<%@page import="com.example.quizDemo.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
