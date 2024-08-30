@@ -74,8 +74,10 @@ public class DriverController
 	@ResponseStatus(HttpStatus.NOT_FOUND)  					//we can set any HttpStatus
 	public Optional<Drivers> getDriverById(@PathVariable("id") int id)
 	{
-		Optional<Drivers> driver = service.findDriverById(id);
+		Optional<Drivers> driver = Optional.ofNullable(service.findDriverById(id).orElse(new Drivers(0,"",0)));
+		
 		return driver;
+		
 	}
 	
 	//API to demonstrate ResponseEntity

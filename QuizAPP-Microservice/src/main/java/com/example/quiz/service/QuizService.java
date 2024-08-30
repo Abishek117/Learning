@@ -31,8 +31,9 @@ public class QuizService {
         this.questionFeign = questionFeign;
     }
 	
-	public ResponseEntity<String> 	getAllQuiz(String category, int count, String title) {
+	public ResponseEntity<String> 	getAllQuiz(int id,String category, int count, String title) {
 		List<Integer> questions = questionFeign.getQuestionsForQuiz(category, count).getBody();
+		quiz.setId(id);
 		quiz.setQuizTitle(title);
 		quiz.setQuestions(questions);
 		repo1.save(quiz);
@@ -49,7 +50,4 @@ public class QuizService {
 		int result = questionFeign.getResult(responses);
 		return result;
 	}
-	
-	
-
 }

@@ -2,27 +2,15 @@ package com.example.quiz.quizEntity;
 
 import java.util.List;
 
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
-
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 
 @Component
 @Entity
-@Table(name = "Quiz")
+@Table(name = "quiz_data")
 public class Quiz {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "quiz_id")
 	private int id;
 	
@@ -30,6 +18,8 @@ public class Quiz {
 	private String quizTitle;
 	
 	@ElementCollection
+	@CollectionTable(name="quiz_questions", joinColumns = @JoinColumn(name = "quiz_id"))
+	@Column(name = "question_id")
 	private List<Integer> questions;
 
 	public Quiz() {

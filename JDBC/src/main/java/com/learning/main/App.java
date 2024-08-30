@@ -30,14 +30,14 @@ public class App
 		//Class.forName("com.mysql.jdbc.Driver");
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager.getConnection(url,user,pass);
-		PreparedStatement pst = conn.prepareStatement("update courses set price=500 where course_id in (?)");
+		PreparedStatement pst = conn.prepareStatement("select * from courses where course_id = ?");
 		pst.setInt(1, 1003);
 		//pst.setInt(2, 1004);
-		//ResultSet rs = pst.executeQuery();
-		int count = pst.executeUpdate();
-		boolean b = pst.execute();
+		ResultSet rs = pst.executeQuery();
+//		int count = pst.executeUpdate();
+//		boolean b = pst.execute();
 		
-		System.out.println(b);
+		//System.out.println(b);
 		
 		//System.out.println(rs.toString());
 		/*
@@ -51,13 +51,14 @@ public class App
 		 */
 		
 	
-//		while(rs.next())
-//		{
-//			int id = rs.getInt("course_id");
-//			String name = rs.getString("course_name");
-//			System.out.println(id +" "+ name);
-//		}
-		
+		while(rs.next())
+		{
+			int id = rs.getInt("course_id");
+			String name = rs.getString("course_name");
+			System.out.println(id +" "+ name);
+		}
+		rs.close();
+			
     }
     
 }

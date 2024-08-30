@@ -81,8 +81,8 @@ public class Main
 		//Collections.sort(stud, compareName);
 		
 		
-//		Comparator<Student> compare = Comparator.comparing(Student::getMarks).thenComparing(Student::getId);
-//		Collections.sort(stud, compare);
+		Comparator<Student> compare = Comparator.comparing(Student::getMarks).thenComparing(Student::getId);
+//    	Collections.sort(stud, compare);
 		//stud.forEach(i -> System.out.println(i));
 		
 	
@@ -91,7 +91,7 @@ public class Main
 		SuperA sa = new SuperB(8);
 		System.out.println(sa.a);
 		System.out.println(sa.a);
-				
+		
 	
 		/*If you want to sort a Map based on its values rather than keys, 
 		you can use the following approach. Unfortunately, Java's standard library doesn't provide a 

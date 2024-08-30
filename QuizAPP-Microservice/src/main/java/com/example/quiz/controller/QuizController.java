@@ -24,8 +24,8 @@ public class QuizController {
 	QuizService quizService;
 	
 	@PostMapping(path = "/createQuiz")
-	public ResponseEntity<String> getAllQuiz(@RequestParam String category,@RequestParam int count, @RequestParam String title){
-		return quizService.getAllQuiz(category, count, title);
+	public ResponseEntity<String> getAllQuiz(@RequestParam int id, @RequestParam String category,@RequestParam int count, @RequestParam String title){
+		return quizService.getAllQuiz(id,category, count, title);
 	}
 	
 	@GetMapping(path = "/getQuiz/{id}")

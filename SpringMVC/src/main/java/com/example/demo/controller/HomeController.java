@@ -9,36 +9,53 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Student;
 import com.example.demo.services.StudentService;
 
-import jakarta.persistence.criteria.Path;
+import org.springframework.web.servlet.ModelAndView;
 
 
-@Controller
-//@RequestMapping(path = "/api/v1")
+@RestController
+@RequestMapping(path = "/api/v1")
 public class HomeController
 {
-		
+
+	private ModelAndView mdlView;
+
 	@Autowired
 	Student s;
 	
 	@Autowired
 	StudentService service;
-	
-	@GetMapping(path = "/CollegeXStudentRegistry")
-	public String home()
-	{
-		return "Hii";
-		//return "index.jsp";
+
+	@Autowired
+	public HomeController(ModelAndView mdlView) {
+		super();
+		this.mdlView = mdlView;
 	}
 	
-	@RequestMapping("/sayHii")
-	public String sayHi()
+	@GetMapping(path = "/CollegeXStudentRegistry")
+	public ModelAndView home()
 	{
-		return "Hii";
-		//return "index.jsp";
+		//return "Hii";
+		mdlView.setViewName("index");
+		return mdlView;
+	}
+	
+	@RequestMapping(path = "/login")
+	public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password, Model model){
+		if ("admin".equals(username) && "password".equals(password)) {
+			model.addAttribute("username", username);
+			mdlView.setViewName("welcome");
+			return mdlView;
+		} else {
+			model.addAttribute("errorMessage", "Username or password doesn't match.");
+			mdlView.setViewName("index");
+			return mdlView;
+		}
+
 	}
 	
 	@RequestMapping("/stud")
@@ -48,7 +65,13 @@ public class HomeController
 		m.addAttribute("StudentName", s.getName());
 		return "welcome.jsp";
 	}
-	
+
+	@RequestMapping("/details")
+	public String getStudentName1(@RequestParam("name") String name, Model m)
+	{
+		m.addAttribute("StudentDetails",service.getByName(name));
+		return "profile.jsp";
+	}
 	@RequestMapping("/details")
 	public String getStudentName(@RequestParam("name") String name, Model m)
 	{

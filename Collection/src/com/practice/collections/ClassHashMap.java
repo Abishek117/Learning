@@ -1,4 +1,4 @@
-	package com.practice.collections;
+package com.practice.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
