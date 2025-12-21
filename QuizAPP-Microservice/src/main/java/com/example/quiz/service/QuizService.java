@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Service;
 import com.example.quiz.quizEntity.QuestionWrapper;
 import com.example.quiz.quizEntity.Quiz;
 import com.example.quiz.quizEntity.Response;
+import com.example.quiz.repo.ExternalCallsFeign;
 import com.example.quiz.repo.QuestionFeign;
 import com.example.quiz.repo.QuizRepository;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class QuizService {
@@ -23,13 +26,25 @@ public class QuizService {
 	
 	@Autowired
 	Quiz quiz;
-	
-	private final QuestionFeign questionFeign;
 
-    @Autowired
-    public QuizService(QuestionFeign questionFeign) {
-        this.questionFeign = questionFeign;
-    }
+	@Autowired
+	RestTemplate restTemplate;
+
+	@Autowired
+	QuestionFeign questionFeign;
+	
+	@Autowired
+	ExternalCallsFeign externalCallsFeign;
+
+//    @Autowired
+//    public QuizService(QuestionFeign questionFeign) {
+//        this.questionFeign = questionFeign;
+//    }
+
+	public QuizService(){
+		super();
+	}
+
 	
 	public ResponseEntity<String> 	getAllQuiz(int id,String category, int count, String title) {
 		List<Integer> questions = questionFeign.getQuestionsForQuiz(category, count).getBody();
@@ -46,8 +61,17 @@ public class QuizService {
 		return new ResponseEntity<>(questions,HttpStatus.OK);
 	}
 
+	public JsonNode getQuestionsById(int id){
+		JsonNode node = restTemplate.getForObject("http://question-service/v1/questions/getQuestionbyId/2", JsonNode.class);
+		return node;
+	}
+
 	public int getResult(List<Response> responses) {
 		int result = questionFeign.getResult(responses);
 		return result;
+	}
+	
+	public List<JsonNode> testFeignForExtCalls() {
+		return externalCallsFeign.getUsers();
 	}
 }

@@ -3,6 +3,8 @@
 import java.util.List;
 import java.util.Optional;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,9 @@ import com.example.demo.service.QuestionService;
 @RestController
 @RequestMapping(path = "/v1/questions")
 public class QuestionController {
+
+	@Autowired
+	ObjectMapper objectMapper;
 
 	@Autowired
 	QuestionService questionService;
@@ -44,6 +49,18 @@ public class QuestionController {
 	public Optional<Questions> getQuestionbyId(@PathVariable("id") Integer questionId)
 	{
 		return questionService.getQuestionbyId(questionId);
+	}
+
+	@GetMapping(path = "/getQuestionbyIdAsJson/{id}")
+	public ResponseEntity<JsonNode> getQuestionbyIdasJson(@PathVariable("id") Integer questionId)
+	{
+		Optional<Questions> opt = questionService.getQuestionbyId(questionId);
+		Questions q = new Questions();
+		if(opt.isEmpty()){
+			q = opt.get();
+		}
+		JsonNode node = objectMapper.valueToTree(q);
+		return ResponseEntity.ok(node);
 	}
 	
 	

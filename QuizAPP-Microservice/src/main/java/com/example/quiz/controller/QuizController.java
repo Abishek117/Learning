@@ -1,6 +1,9 @@
 package com.example.quiz.controller;
 
 import java.util.List;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +40,18 @@ public class QuizController {
 	public int getResult(@PathVariable("id") int id,@RequestBody List<Response> response)
 	{
 		return quizService.getResult(response);
+	}
+
+	@GetMapping(path="/getQuestionByQuiz")
+	public ResponseEntity<JsonNode> getQuestionByQuiz(){
+		ObjectMapper obj = new ObjectMapper();
+		JsonNode json = quizService.getQuestionsById(2);
+		return ResponseEntity.ok(json);
+	}
+	
+	@GetMapping(path="/testFeignForExtCalls")
+	public ResponseEntity<List<JsonNode>> testFeignForExtCalls(){
+		List<JsonNode> json = quizService.testFeignForExtCalls();
+		return ResponseEntity.ok(json);
 	}
 }
