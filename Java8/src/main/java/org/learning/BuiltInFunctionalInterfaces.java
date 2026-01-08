@@ -1,13 +1,9 @@
 package org.learning;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
-public class Main {
+public class BuiltInFunctionalInterfaces {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
@@ -41,5 +37,13 @@ public class Main {
         Supplier<Integer> s = () -> new Random().nextInt(100);
         System.out.println(s.get());
 
+
+        //ToIntFunction
+        ToIntFunction<String> tif = (s1) ->  s1.length();
+        System.out.println(tif.applyAsInt("hhhh"));
+
+        //ToIntBiFunction
+        ToIntBiFunction<String, String> tibf = (s1, s2) -> {return s1.length() - s2.length();};
+        System.out.println(tibf.applyAsInt("hhhh","kk"));
     }
 }
