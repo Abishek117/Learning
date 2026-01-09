@@ -52,11 +52,20 @@ public class GroupAnagrams {
             }
             list.add(str);
         }
-//        String[] strArr = list.stream().toArray((int s) -> new String[s]); //by lambda
-        String[] strArr = list.stream().toArray((int s) -> new String[s]);  // by constructor reference(here its array constructor..refer java basic notes for array constructor
+
+        String[] strArr = list.stream().toArray((int s) -> new String[s]);
+            /*
+            - We know that toArray accepts IntFunction (which accepts int as an argument and return any type) as an argument
+            - Ok that's fine..we can ask how we can pass an "int" from this stream which contains Strings
+
+            When you call .toArray(...), the Stream does three things:
+                - It counts how many items are in the stream (let's say there are 5 items). [toArray method in witten like that only]
+                - It then calls your lambda and says: "Hey, I have 5 items. Use this number 5 to create the right-sized array for me."
+                - now adds the elements currently in the stream inside the created array
+             */
+
         GroupAnagrams ga = new GroupAnagrams();
         List<List<String>> res = ga.groupAnagrams(strArr);
-//        res.forEach(System.out::println);
         if (!res.isEmpty()) {
             System.out.println(res);
         } else {

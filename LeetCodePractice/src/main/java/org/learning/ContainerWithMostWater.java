@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.Scanner;
 
 class ContainerWithMostWater {
+
+    // by two pointers approach
     public int maxArea(int[] arr) {
         int left = 0;
         int right = (arr.length) - 1;
