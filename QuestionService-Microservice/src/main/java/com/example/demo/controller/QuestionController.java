@@ -1,5 +1,7 @@
  package com.example.demo.controller;
 
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.Optional;
 

@@ -45,6 +45,7 @@ public class QuizController {
 	@GetMapping(path="/getQuestionByQuiz")
 	public ResponseEntity<JsonNode> getQuestionByQuiz(){
 		ObjectMapper obj = new ObjectMapper();
+		System.out.println("::::::::::::::::::Entering controller");
 		JsonNode json = quizService.getQuestionsById(2);
 		return ResponseEntity.ok(json);
 	}
