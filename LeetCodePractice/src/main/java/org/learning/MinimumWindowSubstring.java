@@ -16,7 +16,7 @@
  * Input: s = "a", t = "a"
  * Output: "a"
  * Explanation: The entire string s is the minimum window.
- * 
+ *
  * Example 3:
  * Input: s = "a", t = "aa"
  * Output: ""
