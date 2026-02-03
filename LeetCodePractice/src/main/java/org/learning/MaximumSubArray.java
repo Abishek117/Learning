@@ -57,19 +57,42 @@ public class MaximumSubArray {
     }
     */
 
-    //optimized implementation by "Kadane logic". Use this for a problems with finding sequential subarray which maintains its order
-    public int maxSubArray1(int[] nums) {
+    //optimized implementation by "Kadane logic". Use th
+    // //Kadane’s algorithm is used when You are asked to find the maximum sum of a contiguous subarray.is for a problems with finding sequential subarray which maintains its order
+    /*Typical keywords in problems:
+    “maximum subarray”
+    “largest sum of contiguous elements”
+    “best profit from continuous segment”
+    “max sum window”
+    “longest segment with best score”*/
+    public int maxSubArray1(int[] nums) { //nums = [-2,1,-3,4,-1,2,1,-5,4]
         if (nums.length == 0) {
             return nums.length;
         }
         if (nums.length == 1) {
             return nums[0];
         }
-        int currSum = nums[0];                                  // 15
+        int currMaxSum = nums[0];                                  // 15
         int maxSum = nums[0];                                   // 15
         for (int i = 1; i < nums.length; i++) {
-            currSum = Math.max(nums[i], currSum + nums[i]);     // 8, (15+8) = 23
-            maxSum = Math.max(currSum, maxSum);                 // 23, 15    = 23
+            currMaxSum = Math.max(nums[i], currMaxSum + nums[i]);     // 8, (15+8) = 23
+            maxSum = Math.max(currMaxSum, maxSum);                 // 23, 15    = 23
+        }
+        return maxSum;
+    }
+
+    public int maxSubArray2(int[] nums) { //nums = [-2,1,-3,4,-1,2,1,-5,4]
+        if (nums.length == 0) {
+            return nums.length;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int currMaxSum = nums[0];
+        int maxSum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            currMaxSum = Math.max(nums[i], currMaxSum + nums[i]);
+            maxSum = Math.max(currMaxSum, maxSum);
         }
         return maxSum;
     }

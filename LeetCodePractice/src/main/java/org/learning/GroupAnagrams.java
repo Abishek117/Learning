@@ -39,6 +39,7 @@ public class GroupAnagrams {
         }
 
         return new ArrayList<>(hm.values());
+
     }
 
     public static void main(String[] args) {
