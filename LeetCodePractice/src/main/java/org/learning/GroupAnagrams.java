@@ -36,6 +36,11 @@ public class GroupAnagrams {
             String key = new String(chArr);
 
             hm.computeIfAbsent(key, v -> new ArrayList<>()).add(s);
+/*
+//in this step we may have doubt, it returns empty list if key not present and add the string s to that list..So how that updated list put in that hashmap?
+  //Ans : Java stores only references of objects in hashmap not store exact object in it..
+//So when we add or update the list,that is happening on the same object which is returned by computeIfAbsent. so we are updating the list in that reference. no extra put needed. 
+*/
         }
 
         return new ArrayList<>(hm.values());
