@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,6 +74,7 @@ public class QuizService {
 	}
 
 	
+	@RateLimiter(name = "questionRateLimiter", fallbackMethod = "rateLimitFallback")
 	@CircuitBreaker(name = "questionCB", fallbackMethod = "questionFallback")
 	@Retryable(maxAttempts = 3, backoff = @Backoff(delay = 500, multiplier = 2))
 	public JsonNode getQuestionsById(int id){
@@ -90,6 +92,19 @@ public class QuizService {
 		ObjectMapper objMap = new ObjectMapper();
 		try{
 			String jsonString = "{\"message\": \"Unable to reach inventory-servcie. Try again after some time\"}";
+			JsonNode node = objMap.readTree(jsonString);
+			return node;
+		} catch(Exception e) {
+			System.out.print(e.getMessage());
+			return null;
+		}
+	}
+	
+	public JsonNode rateLimitFallback(int id, Throwable ex) {
+	    System.out.println("FALLBACK EXECUTED: " + ex.getClass().getName());
+		ObjectMapper objMap = new ObjectMapper();
+		try{
+			String jsonString = "{\"message\": \"Too many requests. Please try again later.\"}";
 			JsonNode node = objMap.readTree(jsonString);
 			return node;
 		} catch(Exception e) {
