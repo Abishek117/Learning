@@ -4,7 +4,7 @@ import java.util.TreeSet;
 
 public class ClassTreeSet {
     public static void main(String[] args){
-        TreeSet<Integer> tree = new TreeSet<Integer>();
+        TreeSet<Integer> tree = new TreeSet<>();
         tree.add(3);
         tree.add(1);
         tree.add(6);
